@@ -220,11 +220,6 @@ public class MainActivity extends Activity {
 			finish();
 			return;
 		}
-
-		// validate app pre-requisites
-		if (preRequisites) {
-			envSetup();
-		}
 	}
 
 	@Override
@@ -236,11 +231,14 @@ public class MainActivity extends Activity {
 			Intent enableIntent = new Intent(
 					BluetoothAdapter.ACTION_REQUEST_ENABLE);
 			startActivityForResult(enableIntent, REQUEST_ENABLE_BT);
+		}else{
+			if(mChatService==null){
+				envSetup();
+			}
 		}
 	}
 
 	private void envSetup() {
-		Toast.makeText(this, "init", 0).show();
 		mChatService = new BluetoothDemoService(this, mHandler);
 		mCmdThread = new CommandThread(mHandler, mChatService);
 		new Thread(mCmdThread).start();
@@ -258,7 +256,6 @@ public class MainActivity extends Activity {
 
 	@Override
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
-		Toast.makeText(this, "code " + requestCode, 0).show();
 		switch (requestCode) {
 		case REQUEST_CONNECT_DEVICE_SECURE:
 			// When DeviceListActivity returns with a device to connect
@@ -273,9 +270,11 @@ public class MainActivity extends Activity {
 			}
 			break;
 		case REQUEST_ENABLE_BT:
-			Toast.makeText(this, "sdsds", Toast.LENGTH_SHORT).show();
+			//Toast.makeText(this, "sdsds", Toast.LENGTH_SHORT).show();
 			if (resultCode == Activity.RESULT_OK) {
-				envSetup();
+				if(mChatService==null){
+					envSetup();
+				}
 			} else {
 				Toast.makeText(this, "蓝牙未开启,应用将退出", Toast.LENGTH_SHORT).show();
 				finish();
