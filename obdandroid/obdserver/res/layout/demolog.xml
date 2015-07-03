@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_demolog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="模拟数据发送" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+       <Spinner
+            android:id="@+id/sp_cmd"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+       
+       <Button
+            android:id="@+id/btn_sendcmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onSendCmd"
+            android:text="发送" />
+                
+        <Button
+            android:id="@+id/btn_autocmd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onAutoCmd"
+            android:text="自动发送" />
+
+    </LinearLayout>
+
+     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="接收到的数据" />
+     
+    <ListView
+        android:id="@+id/lv_cmdlog"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" >
+    </ListView>
+
+</LinearLayout>
