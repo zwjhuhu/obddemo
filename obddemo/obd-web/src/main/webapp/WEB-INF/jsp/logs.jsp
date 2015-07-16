@@ -10,13 +10,8 @@
 	<ul style="border-top:1px solid #ccc;">
 		<c:forEach items="${datas}" var="log">
 			<li>
-				<c:if test="${ log.type == 0}">
-					发送终端
-				</c:if>
-				<c:if test="${ log.type == 1}">
-					接收终端
-				</c:if>
-				内容: [${log.content}] 发送时间: ${log.optime}
+				关联设备号 ${log.deviceid }
+				命令字: [${log.req}] 发送时间: ${log.updatetime}
 			</li>
 		</c:forEach>
 	</ul>

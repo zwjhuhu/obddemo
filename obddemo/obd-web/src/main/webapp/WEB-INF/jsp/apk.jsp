@@ -6,39 +6,21 @@
 	<div>
 		<div style="display: inline-block; width: 45%;margin-top:20px;">
 			<div>
-				<a href="apkdown?name=obdbtsender"
+				<a href="apkdown?name=obdreader"
 					style="display: block; text-align: center;"> <img
-					src="img/obdbtsender.png" style="display: inline-block; width: 30%">
+					src="img/obdreader.png" style="display: inline-block; width: 30%">
 				</a>
 			</div>
-			<div style="text-align: center">蓝牙发送端</div>
+			<div style="text-align: center">蓝牙读取</div>
 		</div>
 		<div style="display: inline-block; width: 45%;margin-top:20px;">
 			<div>
-				<a href="apkdown?name=odbbtreader"
+				<a href="apkdown?name=obdremote"
 					style="display: block; text-align: center;"> <img
-					src="img/odbbtreader.png" style="display: inline-block; width: 30%">
+					src="img/obdremote.png" style="display: inline-block; width: 30%">
 				</a>
 			</div>
-			<div style="text-align: center">蓝牙接收端</div>
-		</div>
-		<div style="display: inline-block; width: 45%;margin-top:20px;">
-			<div>
-			<a href="apkdown?name=obdclient"
-					style="display: block; text-align: center;"> <img
-					src="img/obdclient.png" style="display: inline-block; width: 30%">
-				</a>
-			</div>
-			<div style="text-align: center">网络发送端</div>
-		</div>
-		<div style="display: inline-block; width: 45%;margin-top:20px;">
-			<div>
-			<a href="apkdown?name=obdserver"
-					style="display: block; text-align: center;"> <img
-					src="img/obdserver.png" style="display: inline-block; width: 30%">
-				</a>
-			</div>
-			<div style="text-align: center">网络接收端</div>
+			<div style="text-align: center">远程接收</div>
 		</div>
 	</div>
 </body>

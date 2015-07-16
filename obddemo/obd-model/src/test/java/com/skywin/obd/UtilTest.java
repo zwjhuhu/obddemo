@@ -1,6 +1,8 @@
 package com.skywin.obd;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.junit.Test;
 
@@ -9,12 +11,21 @@ import com.skywin.obd.model.ProtocolEntity;
 import com.skywin.obd.util.CommonUtils;
 
 public class UtilTest {
+	
+	@Test
+	public void otherTest() {
+		Map<String,String> map = new HashMap<String, String>();
+		String test = "01 0C";
+		map.put(test+"\r", "wtf");
+		System.out.println(map.get("01 0C\r"));
+	}
+	
 	@Test
 	public void hexStrTest() {
-		String str = "FF AE 12";
-		byte[] buf = CommonUtils.parseHexString(str);
+		String str = "AT AE 12";
+		byte[] buf = CommonUtils.parseByteString(str);
 		System.out.println(Arrays.toString(buf));
-		System.out.println(CommonUtils.toHexString(buf));
+		System.out.println(CommonUtils.toByteString(buf));
 	}
 	
 	@Test

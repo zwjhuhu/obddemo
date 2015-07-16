@@ -28,6 +28,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.skywin.obd.db.DbUtils;
+import com.skywin.obd.model.CmdLog;
 import com.skywin.obd.model.DeviceInfo;
 import com.skywin.obd.model.ObdLog;
 import com.skywin.obd.util.CommonUtils;
@@ -129,8 +130,8 @@ public class TestController {
 
 	@RequestMapping(value = "/logs", method = RequestMethod.GET)
 	public String logspage(Model model) {
-		String sql = "select * from obdlog order by id desc limit 20";
-		List<ObdLog> list = DbUtils.findBYSql(sql, ObdLog.class);
+		String sql = "select * from cmdlog order by id desc limit 20";
+		List<CmdLog> list = DbUtils.findBYSql(sql, CmdLog.class);
 
 		model.addAttribute("datas", list);
 		return "logs";

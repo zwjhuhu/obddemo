@@ -79,6 +79,7 @@ public final class CommonUtils {
 		return ret;
 	}
 
+	@Deprecated
 	public static String toHexString(byte[] content, int len) {
 		if (content == null || content.length == 0) {
 			return "";
@@ -96,6 +97,7 @@ public final class CommonUtils {
 		return sb.toString();
 	}
 
+	@Deprecated
 	public static String toHexString(byte[] content) {
 		if (content == null) {
 			return "";
@@ -103,6 +105,7 @@ public final class CommonUtils {
 		return toHexString(content, content.length);
 	}
 
+	@Deprecated
 	public static byte[] parseHexString(String str) {
 		str = str.trim();
 		String[] temps = str.split(" ");
@@ -113,5 +116,40 @@ public final class CommonUtils {
 			i++;
 		}
 		return ret;
+	}
+	
+	public static String toByteString(byte[] content, int len) {
+		if (content == null || content.length == 0) {
+			return "";
+		}
+		if (len > content.length) {
+			len = content.length;
+		}
+		
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < len; i++) {
+			int c = content[i];
+			c &= 0xFF;
+			sb.append((char)c);
+		}
+		return sb.toString();
+	}
+
+	public static String toByteString(byte[] content) {
+		if (content == null) {
+			return "";
+		}
+		return toByteString(content, content.length);
+	}
+
+	public static byte[] parseByteString(String str) {
+		if(str==null){
+			return null;
+		}
+		str = str.trim();
+		if(str.isEmpty()){
+			return null;
+		}
+		return str.getBytes();
 	}
 }

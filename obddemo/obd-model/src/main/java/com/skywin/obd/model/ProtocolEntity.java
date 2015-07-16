@@ -107,7 +107,7 @@ public class ProtocolEntity {
 				+ (destdeviceid & 0xFFFF) + ", code=" + (code & 0xFF)
 				+ ", sequenceid=" + (sequenceid & 0xFFFF) + ", contentlen="
 				+ (contentlen & 0xFF) + ", content=" + "["
-				+ CommonUtils.toHexString(content) + "]" + ", checksum="
+				+ CommonUtils.toByteString(content) + "]" + ", checksum="
 				+ (checksum & 0xFF) + "]";
 	}
 
