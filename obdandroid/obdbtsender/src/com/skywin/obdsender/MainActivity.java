@@ -334,7 +334,7 @@ public class MainActivity extends Activity {
 							|| "01 09".equals(readMessage)) {// fuel trim
 						sendAutoResponse(dummy + findRandomStr(255) + suf);
 					} else {
-						sendAutoResponse(readMessage + suf);
+						sendAutoResponse("41 00 00 00" + suf);
 					}
 				}
 

@@ -1,6 +1,5 @@
 package com.skywin.obd.protocol;
 
-
 import com.skywin.obd.util.CommonUtils;
 
 public class ProtocolEntity {
@@ -100,18 +99,16 @@ public class ProtocolEntity {
 		}
 		return (short) (0xFFFF & sum);
 	}
+
 	@Override
 	public String toString() {
-		return "ProtocolEntity [side=" + (side&0xFF) + ", srcdeviceid=" + (srcdeviceid&0xFFFF)
-				+ ", destdeviceid=" + (destdeviceid&0xFFFF) + ", code=" + (code&0xFF)
-				+ ", sequenceid=" + (sequenceid&0xFFFF) + ", contentlen=" + (contentlen&0xFF)
-				+ ", content=" + "["
-				+ CommonUtils.toHexString(content)+"]" + ", checksum="
-				+ (checksum&0xFF) + "]";
+		return "ProtocolEntity [side=" + (side & 0xFF) + ", srcdeviceid="
+				+ (srcdeviceid & 0xFFFF) + ", destdeviceid="
+				+ (destdeviceid & 0xFFFF) + ", code=" + (code & 0xFF)
+				+ ", sequenceid=" + (sequenceid & 0xFFFF) + ", contentlen="
+				+ (contentlen & 0xFF) + ", content=" + "["
+				+ CommonUtils.toByteString(content) + "]" + ", checksum="
+				+ (checksum & 0xFF) + "]";
 	}
-
-	
-	
-	
 
 }
