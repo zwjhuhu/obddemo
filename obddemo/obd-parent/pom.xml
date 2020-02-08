@@ -8,7 +8,7 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<jdklevel>1.7</jdklevel>
+		<jdklevel>1.8</jdklevel>
 		<maven.test.skip>true</maven.test.skip>
 		<rep.url>192.168.100.231:8080</rep.url>
 		<version.spring>3.2.8.RELEASE</version.spring>
@@ -39,11 +39,9 @@
 		<version.javamail>1.4.5</version.javamail>
 		<version.servlet.api>2.5</version.servlet.api>
 		<version.jstl>1.2</version.jstl>
-		<source.compiler.level>1.6</source.compiler.level>
-		<target.compiler.level>1.6</target.compiler.level>
-		<version.druid>1.0.9</version.druid>
+		<version.druid>1.1.14</version.druid>
 	</properties>
-
+<!--
 	<repositories>
 		<repository>
 			<id>nexus-repo</id>
@@ -70,7 +68,7 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
+-->
 	<build>
 		<plugins>
 			<plugin>
